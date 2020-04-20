@@ -1,8 +1,8 @@
-import { getObjectWithoutNestedKey } from './getObjectWithoutNestedKeyUtil';
-import { validateMappingObject } from './validationUtil.js';
+import { getObjectWithoutNestedKey } from './utils/getObjectWithoutNestedKeyUtil';
+import { validateMappingObject } from './utils/validationUtil.js';
 import { reservedKeys } from './contatnts.js';
-import {findNestedValue} from "./findNestedValueUtil";
-import {clearObject} from "./clearObjectUtil";
+import {findNestedValue} from "./utils/findNestedValueUtil";
+import {clearObject} from "./utils/clearObjectUtil";
 
 const mapValueToPathInObject = ({ parentObject, valuePath, newValue }) => {
     let currentParent = parentObject;

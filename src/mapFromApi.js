@@ -1,7 +1,7 @@
 import { reservedKeys } from './contatnts.js';
-import { validateMappingObject } from './validationUtil.js';
-import {mergeDeep} from "./deepMergeUtil";
-import {findNestedValue} from "./findNestedValueUtil";
+import { validateMappingObject } from './utils/validationUtil.js';
+import {mergeDeep} from "./utils/deepMergeUtil";
+import {findNestedValue} from "./utils/findNestedValueUtil";
 
 const mapResponsePathToObject = ({ objectToMap, keyName, valuePath }) => {
     const valueToMap = findNestedValue(objectToMap, valuePath);
