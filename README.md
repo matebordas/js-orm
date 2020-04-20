@@ -12,7 +12,6 @@ Import in your project like this:
 ```
 import { mapFieldsFromApi, mapFieldsForApi } from 'js-orm-lib'
 ```
-
 ## Usage
 Use the ```mapFieldsFromApi``` to map the data to the desired front-end object structure.
 Use the ```mapFieldsForApi``` to map the previously changed object back to the backend structure.
@@ -31,7 +30,6 @@ const mockAPIData = {
     favoriteFood: ['beer', 'pizza', 'burger'],
 };
 ```
-
 We can do: 
 ```
 const mapping = {
@@ -67,8 +65,7 @@ Note that if you use a function value or call the `transformFromApi` you need to
 This is to minimise the chance of sending back and invalid data.
 
 All the string path mappings will be reverse mapped when calling `mapFieldsForApi`, the function fields and fields added with `transformFromApi` will stay on the object.
-
-For example if we call `mapFieldsForApi(mappedResult, mapping)` on the above data, we will get:
+<br/>For example if we call `mapFieldsForApi(mappedResult, mapping)` on the above data, we will get:
 ```
 ... fields added by functions
 data: {
@@ -82,8 +79,7 @@ favoriteFood: ['beer', 'pizza', 'burger'],
 ```
 
 **Nested mapping:**
-
-We can also map values into nested fields using a mapping configuration like this:
+<br/>We can also map values into nested fields using a mapping configuration like this:
 ```
 const mapping = {
     ['data.name']: 'data.fullName',
@@ -105,10 +101,8 @@ data: {
 }
 ```
 **Entity name:**
-
-If you specify an `entityName` on the mapping configuration, the `mapFieldsForApi` will place all the data inside a field by that name:
-
-E.g.:
+<br/> If you specify an `entityName` on the mapping configuration, the `mapFieldsForApi` will place all the data inside a field by that name:
+<br/> E.g.:
 ```
 const mapping = {
     entityName: 'simpson',
