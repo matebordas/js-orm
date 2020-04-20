@@ -1,4 +1,4 @@
-import { mapFieldsFromApi } from '../../src/mapFromApi.js';
+import { mapFieldsFromApi } from '../../src';
 
 const mockAPIData = {
     data: {
@@ -72,5 +72,29 @@ describe('mapFieldsFromApi', () => {
         const mappingFunction = () => { mapFieldsFromApi(mockAPIData, mapping) };
         expect(mappingFunction)
             .toThrow(Error('transformForApi function must be provided when using transformFromApi'));
+    });
+
+    it('should map fields to nested fields', () => {
+        const mapping = {
+            entityName: 'simpson',
+            ['data.name']: 'data.fullName',
+            ['data.age']: 'data.ageNumber',
+            ['data.homeTown']: 'data.location.town',
+            ['data.food.likedFood']: 'favoriteFood',
+        };
+
+        const expectedResult = {
+            data: {
+                name: mockAPIData.data.fullName,
+                age: mockAPIData.data.ageNumber,
+                homeTown: mockAPIData.data.location.town,
+                food: {
+                    likedFood: mockAPIData.favoriteFood,
+                },
+            },
+        };
+
+        const mappedResult = mapFieldsFromApi(mockAPIData, mapping);
+        expect(mappedResult).toEqual(expectedResult);
     });
 });
