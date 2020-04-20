@@ -1,12 +1,19 @@
 {
-  "name": "js-orm",
-  "version": "1.0.0",
+  "name": "js-orm-lib",
+  "version": "1.0.7",
   "description": "A simple JavaScript ORM library",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "babel-node spec/run.js",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/matesk8/js-orm.git"
   },
   "author": "Mate Balo Bordas",
   "license": "MIT",
