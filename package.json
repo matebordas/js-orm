@@ -1,7 +1,12 @@
 {
   "name": "js-orm-lib",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple JavaScript ORM library",
+  "keywords": [
+    "JavaSript ORM",
+    "object relational mapping",
+    "oject mapping"
+  ],
   "main": "dist/index.js",
   "files": [
     "dist"
