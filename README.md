@@ -1,7 +1,7 @@
 # JS-ORM
 
 ## About
-A simple API that allows you to map the API responses to the desired FE data model and vice versa.
+A simple library that allows you to map the backend API responses to the desired front-end data model and vice versa.
 
 ## Installation
 Run:
@@ -67,6 +67,7 @@ Note that if you use a function value or call the `transformFromApi` you need to
 This is to minimise the chance of sending back and invalid data.
 
 All the string path mappings will be reverse mapped when calling `mapFieldsForApi`, the function fields and fields added with `transformFromApi` will stay on the object.
+
 For example if we call `mapFieldsForApi(mappedResult, mapping)` on the above data, we will get:
 ```
 ... fields added by functions
@@ -81,6 +82,7 @@ favoriteFood: ['beer', 'pizza', 'burger'],
 ```
 
 **Nested mapping:**
+
 We can also map values into nested fields using a mapping configuration like this:
 ```
 const mapping = {
@@ -103,6 +105,7 @@ data: {
 }
 ```
 **Entity name:**
+
 If you specify an `entityName` on the mapping configuration, the `mapFieldsForApi` will place all the data inside a field by that name:
 
 E.g.:
