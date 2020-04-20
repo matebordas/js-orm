@@ -1,3 +1,17 @@
+const flattenObject = (obj) => {
+    const flattened = {}
+
+    Object.keys(obj).forEach((key) => {
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+            Object.assign(flattened, flattenObject(obj[key]))
+        } else {
+            flattened[key] = obj[key]
+        }
+    })
+
+    return flattened
+}
+
 const validateMappingObject = (mapping) => {
     if (!mapping) { return; }
     if (typeof mapping !== 'object') {
@@ -16,7 +30,8 @@ const validateMappingObject = (mapping) => {
         throw Error('transformForApi function must be provided when using transformFromApi');
     }
 
-    Object.entries(mapping).forEach(([mappingKey, mappingValue]) => {
+    const flattenedMapping = flattenObject(mapping);
+    Object.values(flattenedMapping).forEach((mappingValue) => {
         const typeOfMappingValue = typeof mappingValue;
         if (typeOfMappingValue !== 'string' && typeOfMappingValue !== 'function') {
             throw Error('Field mappings must be of type string or function');
