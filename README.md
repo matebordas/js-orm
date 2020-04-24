@@ -45,7 +45,7 @@ const mapping = {
         date.setFullYear(date.getFullYear() - mappedData.age)
         return date.getFullYear();
     },
-    transformFromApi: (mappedData, response) => { // This allows us to manipulte the object as a whole
+    transformFromApi: (mappedData, response) => { // This allows us to manipulate the object as a whole
         return {
             ...mappedData,
             beersPerDay: 1,
@@ -67,7 +67,7 @@ This is to minimise the chance of sending back and invalid data.
 All the string path mappings will be reverse mapped when calling `mapFieldsForApi`, the function fields and fields added with `transformFromApi` will stay on the object.
 <br/>For example if we call `mapFieldsForApi(mappedResult, mapping)` on the above data, we will get:
 ```javascript
-... fields added by functions
+...fields added by functions
 data: {
     fullName: 'Homer Simpson',
     ageNumber: 40,

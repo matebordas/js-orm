@@ -1,12 +1,8 @@
 {
   "name": "js-orm-lib",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A simple JavaScript ORM library",
-  "keywords": [
-    "JavaSript ORM",
-    "object relational mapping",
-    "oject mapping"
-  ],
+  "keywords": ["JavaSript ORM", "object relational mapping", "oject mapping", "js orm lib", "orm", "adapter"],
   "main": "dist/index.js",
   "files": [
     "dist"
